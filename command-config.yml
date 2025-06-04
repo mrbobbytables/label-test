@@ -1,0 +1,57 @@
+toc:
+  label:
+  - 'toc'
+  - '-needs-group'
+
+tag:
+  label:
+    - 'tag/{{ args.0 }}'  
+    - '-needs-group' # removes 'needs-group' only on success (I think)
+
+triage:
+  label:
+    - '-triage/*' # removes any current triage label
+    - 'triage/{{ args.0 }}' # applies triage label
+    - '-needs-triage'  # removes 'needs-triage' only on success (I think)
+
+kind:
+  label:
+    - 'kind/{{ args.0 }}'
+    - '-needs-kind'
+
+review:
+  label:
+    - 'review/{{ args.0 }}'
+
+dd:
+  label:
+    - '-dd/ready-for-assignment'
+    - '-dd/in-progress'
+    - '-dd/in-comment-period'
+    - '-dd/in-voting'
+    - '-dd/complete'
+    - '-dd/waiting'
+    - 'dd/{{ args.0 }}'
+
+dd/adopters:
+  - '-dd/adopters/*'
+  - 'dd/adopters/{{ args.0 }}'
+
+dd/gov-review:
+  - '-dd/gov-review/*'
+  - 'dd/gov-review/{{ args.0 }}'
+
+dd/tech-review:
+  - '-dd/tech-review/*'
+  - 'dd/tech-review/{{ args.0 }}'
+
+dd/sec-review:
+  - '-dd/sec-review/*'
+  - 'dd/sec-review/{{ args.0 }}'
+
+
+  
+
+assign:
+  assign:
+    - '{{ input }}'
